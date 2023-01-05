@@ -1,0 +1,62 @@
+resources:
+  repositories:
+  - repository: self
+    type: git
+
+trigger:
+  - main
+jobs:
+- job: Job_1
+  displayName: Agent job 1
+  pool:
+    vmImage: windows-latest
+  steps:
+  - checkout: self
+
+  - task: PowerShell@2
+    displayName: PowerShell Script
+    inputs:
+      targetType: inline
+      filePath: inline.ps
+      script: >-
+        $file = "inline.ps"
+
+        #Get-Content  "$file" -Raw
+
+        #(Get-Content $file).length
+
+         
+
+
+        $i = 12
+
+        for($i=1 ; $i -le 12; $i++)
+
+        {
+
+         
+
+         
+
+        #Write-Host ($i)
+
+         
+
+        $i=$i+2
+
+         
+
+         
+
+        $q = Get-Content $file | Select -Index ($i - 1 )
+
+         
+
+         
+
+        Write-Output ($q)
+
+         
+
+
+        }
