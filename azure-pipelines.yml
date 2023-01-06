@@ -1,6 +1,7 @@
 resources:
   repositories:
-  - repository: self
+  - repository: inlinerepo
+
     type: git
 
 trigger:
