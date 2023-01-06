@@ -1,7 +1,8 @@
 resources:
   repositories:
   - repository: inlinerepo
-
+    endpoint: ashokdsr
+    name: ashokdsr/inlinerepo
     type: git
 
 trigger:
@@ -17,47 +18,25 @@ jobs:
   - task: PowerShell@2
     displayName: PowerShell Script
     inputs:
-      targetType: inline
-      filePath: inline.ps
-      script: >-
+      targetType: 'inline'
+      script: |
         $file = "inline.ps"
-
         #Get-Content  "$file" -Raw
-
         #(Get-Content $file).length
-
-         
-
-
-        $i = 12
-
+         $i = 12
         for($i=1 ; $i -le 12; $i++)
-
         {
-
          
-
          
-
         #Write-Host ($i)
-
          
-
         $i=$i+2
-
          
-
          
-
         $q = Get-Content $file | Select -Index ($i - 1 )
-
          
-
          
-
         Write-Output ($q)
-
          
-
-
+        
         }
