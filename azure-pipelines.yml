@@ -3,7 +3,7 @@ resources:
   - repository: inlinerepo
     endpoint: ashokdsr
     name: ashokdsr/inlinerepo
-    type: git
+    type: github
 
 trigger:
   - main
